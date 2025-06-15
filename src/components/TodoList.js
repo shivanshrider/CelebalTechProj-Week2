@@ -2,22 +2,28 @@ import React, { useState, useEffect } from 'react';
 import './TodoList.css';
 
 const TodoList = () => {
+  // I use state to keep track of all the tasks
   const [tasks, setTasks] = useState(() => {
+    // This loads tasks from localStorage if they exist
     const savedTasks = localStorage.getItem('tasks');
     return savedTasks ? JSON.parse(savedTasks) : [];
   });
+  // This is for the input field
   const [newTask, setNewTask] = useState('');
+  // For filtering and sorting
   const [filter, setFilter] = useState('all');
   const [sortBy, setSortBy] = useState('date');
   const [isAdding, setIsAdding] = useState(false);
 
+  // Save tasks to localStorage whenever they change
   useEffect(() => {
     localStorage.setItem('tasks', JSON.stringify(tasks));
   }, [tasks]);
 
+  // Add a new task
   const addTask = (e) => {
     e.preventDefault();
-    if (newTask.trim() === '') return;
+    if (newTask.trim() === '') return; // Don't add empty tasks
 
     const task = {
       id: Date.now(),
@@ -34,6 +40,7 @@ const TodoList = () => {
     }, 300);
   };
 
+  // Remove a task (with a little animation)
   const removeTask = (taskId) => {
     const taskElement = document.getElementById(`task-${taskId}`);
     if (taskElement) {
@@ -44,18 +51,21 @@ const TodoList = () => {
     }
   };
 
+  // Mark a task as complete or not
   const toggleComplete = (taskId) => {
     setTasks(tasks.map(task =>
       task.id === taskId ? { ...task, completed: !task.completed } : task
     ));
   };
 
+  // Filter tasks based on the dropdown
   const filteredTasks = tasks.filter(task => {
     if (filter === 'active') return !task.completed;
     if (filter === 'completed') return task.completed;
     return true;
   });
 
+  // Sort tasks by date or name
   const sortedTasks = [...filteredTasks].sort((a, b) => {
     if (sortBy === 'date') {
       return new Date(b.date) - new Date(a.date);
@@ -71,7 +81,7 @@ const TodoList = () => {
           {tasks.filter(task => !task.completed).length} tasks remaining
         </p>
       </div>
-      
+      {/* Form to add a new task */}
       <form onSubmit={addTask} className={`task-form ${isAdding ? 'adding' : ''}`}>
         <div className="input-wrapper">
           <input
@@ -86,7 +96,7 @@ const TodoList = () => {
           </button>
         </div>
       </form>
-
+      {/* Filter and sort controls */}
       <div className="controls">
         <div className="filter-group">
           <label>Filter:</label>
@@ -96,7 +106,6 @@ const TodoList = () => {
             <option value="completed">Completed</option>
           </select>
         </div>
-
         <div className="sort-group">
           <label>Sort by:</label>
           <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
@@ -105,7 +114,7 @@ const TodoList = () => {
           </select>
         </div>
       </div>
-
+      {/* List of tasks */}
       <ul className="tasks">
         {sortedTasks.map(task => (
           <li 

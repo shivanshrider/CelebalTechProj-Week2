@@ -1,10 +1,31 @@
-# React ToDo List Application
+# ToDo List App
 
-**Project Introduction**
+This is my ToDo List project for Week 2 of the CSI - Celebal Summer Internship 2025 at Celebal Technologies.
 
-This project is a modern, dynamic ToDo List web application built with React. It features a beautiful dark purple theme, task management (add, complete, delete), filtering, sorting, and persistent storage using localStorage. The UI is responsive and user-friendly, making it easy to manage your daily tasks.
+I made this app to practice React basics like components, state, and props. The app lets you add, complete, and delete tasks. You can also filter and sort your tasks, and everything stays saved even if you refresh the page (thanks to localStorage). I picked a purple theme because I wanted something that looks modern and stands out.
 
-> **Note:** This is the **Week 2 project** assigned by Celebal Technologies as part of the **CSI - Celebal Summer Internship 2025**.
+## How to Run
+
+1. Clone this repo and open the folder in your code editor.
+2. Run `npm install` to install everything you need.
+3. Start the app with `npm start`.
+
+## How to Use
+
+- Type a task and click "Add Task" to add it.
+- Click the checkbox to mark a task as done.
+- Use the trash icon to delete a task.
+- Use the dropdowns to filter or sort your tasks.
+- Your tasks will stay even if you close or refresh the browser.
+
+## What I Learned
+
+- How to use React hooks like useState and useEffect.
+- How to store data in localStorage.
+- How to make a responsive UI with CSS.
+- How to handle user input and validation.
+
+I had a lot of fun building this and learned a lot about React. Thanks to my mentors for their help and feedback!
 
 ## Features
 
@@ -16,18 +37,6 @@ This project is a modern, dynamic ToDo List web application built with React. It
 - Persistent storage using localStorage
 - Responsive design
 - Input validation
-
-## Getting Started
-
-1. Clone the repository
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Start the development server:
-   ```bash
-   npm start
-   ```
 
 ## Testing Guide
 
