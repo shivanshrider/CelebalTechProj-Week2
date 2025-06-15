@@ -1,6 +1,10 @@
-# React Todo List Application
+# React ToDo List Application
 
-A feature-rich Todo List application built with React that includes task management, filtering, sorting, and local storage persistence.
+**Project Introduction**
+
+This project is a modern, dynamic ToDo List web application built with React. It features a beautiful dark purple theme, task management (add, complete, delete), filtering, sorting, and persistent storage using localStorage. The UI is responsive and user-friendly, making it easy to manage your daily tasks.
+
+> **Note:** This is the **Week 2 project** assigned by Celebal Technologies as part of the **CSI - Celebal Summer Internship 2025**.
 
 ## Features
 
@@ -27,34 +31,23 @@ A feature-rich Todo List application built with React that includes task managem
 
 ## Testing Guide
 
-1. **Adding Tasks**
-   - Enter a task in the input field and click "Add Task" or press Enter
-   - Try adding an empty task (should be prevented)
-   - Add multiple tasks to test the list functionality
+1. **Add Tasks:**  
+   Type a task and click "Add Task". Empty tasks are not allowed.
 
-2. **Task Management**
-   - Click the checkbox to mark a task as complete/incomplete
-   - Click the "Delete" button to remove a task
-   - Verify that completed tasks show with a strikethrough
+2. **Mark Complete:**  
+   Click the checkbox to mark a task as complete/incomplete.
 
-3. **Filtering**
-   - Use the filter dropdown to switch between:
-     - All tasks
-     - Active tasks (uncompleted)
-     - Completed tasks
-   - Verify that the correct tasks are displayed for each filter
+3. **Delete Tasks:**  
+   Click the trash icon to remove a task.
 
-4. **Sorting**
-   - Use the sort dropdown to:
-     - Sort by date (newest first)
-     - Sort alphabetically by task name
-   - Verify that tasks are properly sorted
+4. **Filter/Sort:**  
+   Use the dropdowns to filter (All/Active/Completed) and sort (Date/Name).
 
-5. **Persistence**
-   - Add some tasks
-   - Refresh the page
-   - Verify that your tasks are still there
-   - Close and reopen the browser to test localStorage persistence
+5. **Persistence:**  
+   Refresh the page or close/reopen the browser. Your tasks should remain (localStorage).
+
+6. **Responsive:**  
+   Try resizing the browser or using on mobile—UI should adapt.
 
 ## Implementation Details
 
